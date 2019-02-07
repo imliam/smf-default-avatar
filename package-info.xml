@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<name>Default Avatar</name>
+	<id>LiamHammett:DefaultAvatar</id>
+	<type>modification</type>
+	<version>2.0</version>
+
+    <install for="2.0 RC2, 2.0 RC3">
+		<modification>smf-2.0.xml</modification>
+		<require-file name="default_avatar.png" destination="$imagesdir" />
+	</install>
+
+	<uninstall for="2.0 RC2, 2.0 RC3">
+		<modification reverse="true">smf-2.0.xml</modification>
+		<remove-file name="$imagesdir/default_avatar.png" />
+	</uninstall>
+
+    <install for="1.0 - 1.99.99">
+		<modification>smf-1.1.x.xml</modification>
+		<require-file name="default_avatar.png" destination="$imagesdir" />
+	</install>
+
+	<uninstall for="1.0 - 1.99.99">
+		<modification reverse="true">smf-1.1.x.xml</modification>
+		<remove-file name="$imagesdir/default_avatar.png" />
+	</uninstall>
+
+</package-info>

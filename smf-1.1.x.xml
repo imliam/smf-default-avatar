@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<name>Default Avatar</name>
+	<id>LiamHammett:DefaultAvatar</id>
+	<version>1.1</version>
+	<homepage>https://liamhammett.com/</homepage>
+	<file name="$sourcedir/Load.php">
+		<operation>
+			<search position="replace"><![CDATA[		'local_time' => timeformat(time() + ($profile['timeOffset'] - $user_info['time_offset']) * 3600, false),
+	);
+
+	return true;]]></search>
+			<add><![CDATA[                'local_time' => timeformat(time() + ($profile['timeOffset'] - $user_info['time_offset']) * 3600, false),
+        );
+
+// Default avatar. ^^
+if (empty($memberContext[$user]['avatar']['image']))
+   $memberContext[$user]['avatar']['image'] = '<img src="' . $settings['images_url'] . '/default_avatar.png" alt="Default Avatar" title="Default Avatar" width="' . $avatar_width . '" height="' . $avatar_height . '" />';
+
+        return true;]]></add>
+		</operation>
+</file>
+</modification>

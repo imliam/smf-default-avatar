@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<name>Default Avatar</name>
+	<id>LiamHammett:DefaultAvatar</id>
+	<version>1.1</version>
+	<homepage>https://liamhammett.com/</homepage>
+	<file name="$sourcedir/Load.php">
+		<operation>
+			<search position="replace"><![CDATA[	// First do a quick run through to make sure there is something to be shown.
+	$memberContext[$user]['has_messenger'] = false;]]></search>
+			<add><![CDATA[// Default avatar. ^^
+if (empty($memberContext[$user]['avatar']['image']))
+   $memberContext[$user]['avatar']['image'] = '<img src="' . $settings['images_url'] . 'default_avatar.png" alt="Default Avatar" title="Default Avatar" width="' . $avatar_width . '" height="' . $avatar_height . '" />';
+
+// First do a quick run through to make sure there is something to be shown.
+$memberContext[$user]['has_messenger'] = false;
+]]></add>
+		</operation>
+</file>
+</modification>
